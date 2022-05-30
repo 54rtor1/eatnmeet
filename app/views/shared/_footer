@@ -1,0 +1,11 @@
+<footer class="text-lg-start border-top fixed-bottom">
+  <!-- Copyright -->
+  <div class="p-3">
+
+    © 2022 Copyright:
+    <a class="text-dark" href="#">Eat n Meet</a>
+    <a class="text-dark" href="#">Privacy</a>
+    <a class="text-dark" href="#">Terms</a>
+  </div>
+  <!-- Copyright -->
+</footer>
