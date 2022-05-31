@@ -1,6 +1,7 @@
 class DiningsController < ApplicationController
 
   def index
+    @dinings = Dining.all
   end
 
   def new
