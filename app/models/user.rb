@@ -4,7 +4,7 @@ class User < ApplicationRecord
   has_many :bookings
   has_many :dinings
 
-#  validates :email, presence: true, uniqueness: true
+  validates :email, presence: true, uniqueness: true
   validates :address, :country, :name, :role, :password, presence: true
 
   devise :database_authenticatable, :registerable,
