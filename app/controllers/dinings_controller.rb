@@ -39,6 +39,8 @@ class DiningsController < ApplicationController
   end
 
   def destroy
+    @dining.destroy
+    redirect_to dinings_path
   end
 
   private
