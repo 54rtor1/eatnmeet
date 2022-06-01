@@ -5,8 +5,8 @@ class DiningsController < ApplicationController
     @dinings = Dining.all
     @markers = @dinings.geocoded.map do |dining|
       {
-        lat: flat.latitude,
-        lng: flat.longitude
+        lat: dining.latitude,
+        lng: dining.longitude
       }
     end
   end
