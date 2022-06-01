@@ -1,7 +1,8 @@
 class BookingsController < ApplicationController
-#  before_action :find_booking, only: [:toggle_status]
+  #  before_action :find_booking, only: [:toggle_status]
 
   def index
+    @bookings = Booking.all
   end
 
   def new
@@ -9,7 +10,10 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(booking_params)
+    @booking = Booking.new
+    @dining = Dining.find(params[:dining_id])
+    @booking.dining = @dining
+    @booking.user = current_user
     @booking.save
   end
 
@@ -24,23 +28,4 @@ class BookingsController < ApplicationController
 
   def destroy
   end
-
-  # def toggle_status
-  #   @booking = bookings.find(params[:id])
-  #   if @booking.book
-  #     @booking.booked!
-  #   elsif @booking.booked
-  #     @booking.book!
-  #   end
-  # end
-
-  private
-
-  def booking_params
-    params.require(:booking).permit(:comment)
-  end
-
-#  def find_booking
-#    @booking = bookings.find(params[:id])
-#  end
 end
