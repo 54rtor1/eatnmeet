@@ -15,7 +15,14 @@
   <i class="fa fa-pencil"></i> Edit this dining
 <% end %>
 <br><br>
+
+<div data-controller="bookings-create">
+  <a class= 'btn btn-primary' data-action="click->bookings-create#changeButton" data-bookings-create-target="button">Reserve a spot</a>
+</div>
+
+<br><br>
 <%= link_to dinings_path do %>
   <i class="fa fa-history"></i> Back to list
 <% end %>
+
 </div>
