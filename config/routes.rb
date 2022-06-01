@@ -6,7 +6,6 @@ Rails.application.routes.draw do
     resources :bookings, only: :create
   end
 
-
   # resources :bookings do
   #   member do
   #     get :toggle_status
