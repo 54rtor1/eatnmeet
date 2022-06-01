@@ -9,12 +9,12 @@ export default class extends Controller {
 
   connect() {
     mapboxgl.accessToken = this.apiKeyValue
-    this.#addMarkersToMap()
 
     this.map = new mapboxgl.Map({
       container: this.element,
       style: "mapbox://styles/mapbox/streets-v10"
     })
+    this.#addMarkersToMap()
   }
 
   #addMarkersToMap() {
