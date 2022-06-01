@@ -8,30 +8,17 @@
   <p class="well">Max guests: <%= @dining.max_guests %></p>
   <p class="well">Comment: <%= @dining.comment %></p>
 
+  <hr>
+  <%= link_to edit_dining_path(@dining.id), class: 'pull-right btn btn-primary' do %>
+    <i class="fa fa-pencil"></i> Edit this dining
+  <% end %>
+  <br><br>
 
-<h1><%= @dining.name %></h1>
-<hr>
-<p class="well">Date: <%= @dining.date %></p>
-<p class="well">Hour: <%= @dining.time %></p>
-<p class="well">Address: <%= @dining.address %></p>
-<p class="well">Category: <%= @dining.category %></p>
-<p class="well">Max guests: <%= @dining.max_guests %></p>
-<p class="well">Comment: <%= @dining.comment %></p>
-
-<hr>
-<%= link_to edit_dining_path(@dining.id), class: 'pull-right btn btn-primary' do %>
-  <i class="fa fa-pencil"></i> Edit this dining
-<% end %>
-<br><br>
-
-<div data-controller="bookings-create">
-  <%= link_to "Reserve your spot!", dining_bookings_path(@dining), method: 'post', class: 'btn btn-success', data: { action:"click->bookings-create#changeButton", bookings_create_target:"button" }%>
-</div>
-
-<br><br>
-<%= link_to dinings_path do %>
-  <i class="fa fa-history"></i> Back to list
-<% end %>
-
-
+  <div data-controller="bookings-create">
+    <%= link_to "Reserve your spot!", dining_bookings_path(@dining), method: 'post', class: 'btn btn-success', data: { action:"click->bookings-create#changeButton", bookings_create_target:"button" }%>
+  </div>
+  <br><br>
+  <%= link_to dinings_path do %>
+    <i class="fa fa-history"></i> Back to list
+  <% end %>
 </div>
