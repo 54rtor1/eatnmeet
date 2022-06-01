@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2022_06_01_164742) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -37,6 +38,8 @@ ActiveRecord::Schema.define(version: 2022_06_01_164742) do
     t.string "comment"
     t.integer "max_guests"
     t.string "address"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["user_id"], name: "index_dinings_on_user_id"
   end
 
