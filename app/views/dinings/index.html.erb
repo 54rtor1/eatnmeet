@@ -11,6 +11,9 @@
       <% @dinings.each do |dining| %>
         <li>
           <%= link_to dining.name, dining_path(dining.id) %>
+          <%= link_to dining_path(dining.id), method: :delete, data: { confirm: "Delete #{dining.name}?" } do %>
+            <i class="fa-solid fa-trash"></i>
+          <% end %>
         </li>
       <% end %>
     </ul>
