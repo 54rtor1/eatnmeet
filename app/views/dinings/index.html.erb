@@ -1,15 +1,13 @@
-<div class="cover mb-4 d-flex align-items-center justify-content-center">
-  <div class="text-center">
+<div class="mb-4 d-flex align-items-left justify-content-center">
+  <div class="container dark-orange">
     <h1>All dining experiences</h1>
-    <h3 class="typed-js" data-controller="typed-js"></h3>
   </div>
 </div>
-<div class="container py-5">
-
+<div class="container py-2 light-orange">
   <div class="row">
     <ul>
       <% @dinings.each do |dining| %>
-        <li>
+        <li class="no-bullet">
           <%= link_to dining.name, dining_path(dining.id) %>
           <%= link_to dining_path(dining.id), method: :delete, data: { confirm: "Delete #{dining.name}?" } do %>
             <i class="fa-solid fa-trash"></i>
@@ -18,6 +16,7 @@
       <% end %>
     </ul>
   </div>
+  <hr>
   <div class="d-flex align-items-center justify-content-between mb-3">
     <%= link_to "Create dining", new_dining_path, class: "btn btn-primary" %>
   </div>
