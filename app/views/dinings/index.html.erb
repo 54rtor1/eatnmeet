@@ -3,6 +3,7 @@
     <h1>All dining experiences</h1>
   </div>
 </div>
+
 <div class="container py-2 light-orange">
   <div class="row">
     <ul>
@@ -20,9 +21,12 @@
   <div class="d-flex align-items-center justify-content-between mb-3">
     <%= link_to "Create dining", new_dining_path, class: "btn btn-primary" %>
   </div>
+
   <div style="width: 100%; height: 600px;"
   data-controller="mapbox"
   data-mapbox-markers-value="<%= @markers.to_json %>"
   data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   </div>
+
+
 </div>
