@@ -1,16 +1,18 @@
 <% @dinings.each do |dining| %>
-<div class="card-trip">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-  <div class="card-trip-infos">
-    <div>
-      <h2><%= link_to dining.name, dining_path(dining.id) %></h2>
-      <p><%= dining.comment %>
-      <%= link_to dining_path(dining.id), method: :delete, data: { confirm: "Delete #{dining.name}?" } do %>
+<div class="col-sm-4">
+  <div class="card-trip mb-3">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+    <div class="card-trip-infos">
+      <div>
+        <h2><%= link_to dining.name, dining_path(dining.id) %></h2>
+        <p><%= dining.comment %>
+        <%= link_to dining_path(dining.id), method: :delete, data: { confirm: "Delete #{dining.name}?" } do %>
             <i class="fa-solid fa-trash"></i></p>
             <% end %>
+      </div>
+      <h2 class="card-trip-pricing">£99.99</h2>
+      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
     </div>
-    <h2 class="card-trip-pricing">£99.99</h2>
-    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
   </div>
 </div>
 <% end %>
