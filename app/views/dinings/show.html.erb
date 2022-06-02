@@ -1,6 +1,7 @@
 <div class="container align-items-center light-orange">
   <h1><%= @dining.name %></h1>
   <hr>
+  <p><%= cl_image_tag @dining.photo.key, height: 300, width: 400, crop: :fill %></p>
   <p class="well">Date: <%= @dining.date %></p>
   <p class="well">Hour: <%= @dining.time %></p>
   <p class="well">Address: <%= @dining.address %></p>
