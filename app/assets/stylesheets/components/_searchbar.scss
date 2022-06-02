@@ -1,0 +1,13 @@
+.btn-outline-primary {
+  color: $darker-orange;
+  border-color: $darker-orange;
+  &:hover{
+    background-color: $darker-orange;
+    border-color: $darker-orange;
+  }
+}
+
+.btn:focus, .form-control:focus, .btn-outline-primary:focus  {
+  outline: none;
+  box-shadow: 0;
+}
