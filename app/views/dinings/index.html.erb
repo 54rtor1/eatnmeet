@@ -1,6 +1,6 @@
 <div class="mb-4 d-flex align-items-left justify-content-center">
   <div class="containe text-center p-5">
-    <h1>Explore dining experiences</h1>
+    <h2 class="py-3">Explore dining experiences</h2>
 
 
     <%= render 'searchbar' %>
@@ -11,10 +11,14 @@
   <%= render 'card', dining: @dining %>
 </div>
   <hr>
-  <div class="d-flex align-items-center justify-content-between mb-3">
-    <%= link_to "Create dining", new_dining_path, class: "btn btn-" %>
+  <div class="wrapper justify-content-center">
+
+    <div class="d-flex align-items-center justify-content-between mb-3">
+      <%= link_to "Create dining", new_dining_path, class: "btn button-dark" %>
+    </div>
   </div>
 
+<hr>
   <div class="py-3">
     <div style="width: 100%; height: 500px;"
       data-controller="mapbox"
