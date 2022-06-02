@@ -20,7 +20,13 @@
   <br><br>
 
   <div data-controller="bookings-create">
-    <%= link_to "Reserve your spot!", dining_bookings_path(@dining), method: 'post', class: 'btn btn-success', data: { action:"click->bookings-create#changeButton", bookings_create_target:"button" }%>
+    <% if @booking.present? %>
+        <%= link_to "Cancel", booking_path(@booking), method: 'delete', class: 'btn btn-danger', data: { action:"click->bookings-create#changeButton", bookings_create_target:"button" }%>
+    <% elsif  @dining.bookings.count < @dining.max_guests %>
+      <%= link_to "Reserve your spot!", dining_bookings_path(@dining), method: 'post', class: 'btn btn-success', data: { action:"click->bookings-create#changeButton", bookings_create_target:"button" }%>
+    <% else %>
+      <p> Sorry, this dining is fully booked </p>
+    <% end %>
   </div>
   <br><br>
   <%= link_to dinings_path do %>

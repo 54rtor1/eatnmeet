@@ -33,6 +33,7 @@ class DiningsController < ApplicationController
   end
 
   def show
+    @booking = Booking.where(user: current_user, dining: @dining).first
   end
 
   def edit

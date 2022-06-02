@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  #  before_action :find_booking, only: [:toggle_status]
+  # before_action :set_booking, only: [:destroy]
 
   def index
     @bookings = Booking.all
@@ -14,7 +14,11 @@ class BookingsController < ApplicationController
     @dining = Dining.find(params[:dining_id])
     @booking.dining = @dining
     @booking.user = current_user
-    @booking.save
+    if @booking.save
+      redirect_to dining_path(@dining)
+    else
+      render "dinings/show"
+    end
   end
 
   def show
@@ -27,5 +31,9 @@ class BookingsController < ApplicationController
   end
 
   def destroy
+    @booking = Booking.find(params[:id])
+    @dining = @booking.dining
+    @booking.destroy
+    redirect_to dining_path(@dining)
   end
 end
