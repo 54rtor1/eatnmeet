@@ -1,7 +1,15 @@
 <% @dinings.each do |dining| %>
 <div class="col-sm-4">
   <div class="card-trip mb-3">
-    <img src="https://media.istockphoto.com/photos/group-of-joyful-young-asian-man-and-woman-having-fun-passing-and-picture-id1155466574?k=20&m=1155466574&s=612x612&w=0&h=uMIatk0VuHW-R_HipsvmZyP2LoKOxkrIIGCPg4Mk_Qs=" />
+    <% if  dining.photo.key.nil? %>
+      <div class="card-image">
+       <%= image_tag "defaultimgcard.jpg"%>
+     </div>
+    <% else %>
+      <div class="card-image">
+       <%= cl_image_tag dining.photo.key%>
+      </div>
+    <% end %>
     <div class="card-trip-infos">
       <div>
         <h2><%= link_to dining.name, dining_path(dining.id) %></h2>
