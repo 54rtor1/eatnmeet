@@ -55,6 +55,6 @@ class DiningsController < ApplicationController
   end
 
   def dining_params
-    params.require(:dining).permit(:name, :address, :date, :time, :category, :comment, :max_guests)
+    params.require(:dining).permit(:name, :address, :date, :time, :category, :comment, :max_guests, :photo, :price)
   end
 end
