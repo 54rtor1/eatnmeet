@@ -6,17 +6,17 @@
   <div class="form-inputs">
     <%= f.input :name,
                 autofocus: true,
-                required: false %>
+                required: true %>
     <%= f.country_select :country_code,
                 as: :string,
                 autofocus: true,
-                required: true %>
+                required: false %>
     <%= f.input :city,
                 autofocus: true,
                 required: false %>
     <%= f.input :role,
                 autofocus: true,
-                required: false %>
+                required: true %>
 
     <%= f.input :email, required: true, autofocus: true %>
 

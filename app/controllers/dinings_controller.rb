@@ -2,7 +2,12 @@ class DiningsController < ApplicationController
   before_action :set_dining, only: [ :show, :edit, :update, :destroy ]
 
   def index
-    @dinings = Dining.all
+    if params[:query].present?
+      @dinings = Dining.search_by_address(params[:query])
+    else
+      @dinings = Dining.all
+    end
+
     @markers = @dinings.geocoded.map do |dining|
       {
         lat: dining.latitude,
@@ -51,6 +56,6 @@ class DiningsController < ApplicationController
   end
 
   def dining_params
-    params.require(:dining).permit(:name, :address, :date, :time, :category, :comment, :max_guests)
+    params.require(:dining).permit(:name, :address, :date, :time, :category, :comment, :max_guests, :photo, :price)
   end
 end

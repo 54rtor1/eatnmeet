@@ -1,4 +1,26 @@
-a {
+.footer {
+  background: $dark;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  padding: 0px 50px;
+  color: $lighter-gray;
+  font-weight: lighter;
+}
+.footer-links {
+  display: flex;
+  align-items: center;
+}
+.footer-links a {
+  color: $darker-orange;
   text-decoration: none;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  font-size: 24px;
+  padding: 0px 10px;
+}
+.footer-links a:hover {
+  color: $lighter-orange;
+}
+.footer .fa-heart {
+  color: $darker-orange;
 }

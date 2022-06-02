@@ -1,28 +1,31 @@
 <div class="mb-4 d-flex align-items-left justify-content-center">
-  <div class="container dark-orange">
-    <h1>All dining experiences</h1>
-  </div>
+  <div class="containe text-center p-5">
+    <h2 class="py-3">Explore dining experiences</h2>
+
+
+    <%= render 'searchbar' %>
+
 </div>
-<div class="container py-2 light-orange">
+<div class="container">
+
   <div class="row">
-    <ul>
-      <% @dinings.each do |dining| %>
-        <li class="no-bullet">
-          <%= link_to dining.name, dining_path(dining.id) %>
-          <%= link_to dining_path(dining.id), method: :delete, data: { confirm: "Delete #{dining.name}?" } do %>
-            <i class="fa-solid fa-trash"></i>
-          <% end %>
-        </li>
-      <% end %>
-    </ul>
-  </div>
+  <%= render 'card', dining: @dining %>
+</div>
   <hr>
-  <div class="d-flex align-items-center justify-content-between mb-3">
-    <%= link_to "Create dining", new_dining_path, class: "btn btn-primary" %>
+  <div class="wrapper justify-content-center">
+
+    <div class="d-flex align-items-center justify-content-between mb-3">
+      <%= link_to "Create dining", new_dining_path, class: "btn button-dark" %>
+    </div>
   </div>
-  <div style="width: 100%; height: 600px;"
-  data-controller="mapbox"
-  data-mapbox-markers-value="<%= @markers.to_json %>"
-  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+
+<hr>
+  <div class="py-3">
+    <div style="width: 100%; height: 500px;"
+      data-controller="mapbox"
+      data-mapbox-markers-value="<%= @markers.to_json %>"
+      data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+    </div>
   </div>
+
 </div>

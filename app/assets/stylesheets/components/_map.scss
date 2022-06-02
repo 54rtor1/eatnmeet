@@ -5,5 +5,11 @@
 .mapboxgl-popup-content {
   text-align: center;
   color: $darker-orange;
+  & h2 {
+    font-size: 14px;
+  }
+  & p {
+    color: $dark;
+  }
   font-family: "Roboto", sans-serif;
 }
