@@ -1,9 +1,16 @@
 <div class="mb-4 d-flex align-items-left justify-content-center">
-  <div class="container dark-orange">
-    <h1>All dining experiences</h1>
+  <div class="containe text-center p-5">
+    <h1>Explore dining experiences</h1>
+
+
+    <div class="input-group">
+      <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+      <button type="button" class="btn btn-outline-primary">search</button>
+    </div>
   </div>
+
 </div>
-<div class="container py-2 light-orange">
+<div class="container">
   <div class="row">
   <%= render 'card', dining: @dining %>
 </div>
@@ -12,9 +19,11 @@
     <%= link_to "Create dining", new_dining_path, class: "btn btn-primary" %>
   </div>
 
-  <div style="width: 100%; height: 600px;"
-  data-controller="mapbox"
-  data-mapbox-markers-value="<%= @markers.to_json %>"
-  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  <div class="py-3">
+    <div style="width: 100%; height: 500px;"
+      data-controller="mapbox"
+      data-mapbox-markers-value="<%= @markers.to_json %>"
+      data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+    </div>
   </div>
 </div>
