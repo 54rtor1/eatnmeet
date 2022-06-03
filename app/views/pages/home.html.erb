@@ -5,16 +5,15 @@
   </div>
   <br>
   <div>
-  <a class="button-dark"<%= link_to "Find an experience", dinings_path %></a>
+  <a class="button-dark" <%= link_to "Find an experience", dinings_path %> >
   </div >
 </div>
 
 <div class="container p-5">
 
   <%= form_tag dinings_path, method: 'get', :class => 'input-group' do  %>
-        <input type="search" class="form-control rounded" placeholder="Where would you like to dine?" <%= text_field_tag :query,params[:query] %>
+        <%= text_field_tag :query,params[:query], class: "form-control rounded", placeholder: "Find dinings around the globe" %>
         <%= submit_tag "Search", class: 'btn btn-outline-primary' %>
-    </div>
-  <%end%>
+  <% end %>
 
 </div>

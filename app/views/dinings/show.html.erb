@@ -1,18 +1,23 @@
-<div class="container align-items-center light-orange">
-  <h1><%= @dining.name %></h1>
+<div class="mb-4 justify-content-center">
+  <div class="title">
+    <h1><%= @dining.name %></h1>
+  </div>
   <hr>
-  <% unless @dining.photo.key.nil? %>
-    <p><%= cl_image_tag @dining.photo.key, height: 300, width: 400, crop: :fill %></p>
+  <div class="dining-image">
+    <% unless @dining.photo.key.nil? %>
+      <div class="card-image"><%= cl_image_tag @dining.photo.key, height: 300, width: 400, crop: :fill %></div>
   <% end %>
-  <p class="well">Date: <%= @dining.date %></p>
-  <p class="well">Hour: <%= @dining.time %></p>
-  <p class="well">Address: <%= @dining.address %></p>
-  <p class="well">Category: <%= @dining.category %></p>
-  <p class="well">Max guests: <%= @dining.max_guests %></p>
-  <p class="well">Confirmed bookings: <%= @dining.bookings.count %></p>
-  <p class="well">Price per guest: <%= @dining.price %></p>
-  <p class="well">Comment: <%= @dining.comment %></p>
-
+  </div>
+  <div class ="dining-info">
+    <p class="well">Date: <%= @dining.date %></p>
+    <p class="well">Hour: <%= @dining.time %></p>
+    <p class="well">Address: <%= @dining.address %></p>
+    <p class="well">Category: <%= @dining.category %></p>
+    <p class="well">Max guests: <%= @dining.max_guests %></p>
+    <p class="well">Confirmed bookings: <%= @dining.bookings.count %></p>
+    <p class="well">Price per guest: <%= @dining.price %></p>
+    <p class="well">Description: <%= @dining.comment %></p>
+  </div>
   <hr>
   <%= link_to edit_dining_path(@dining.id), class: 'pull-right btn btn-primary btn-radius' do %>
     <i class="fa fa-pencil"></i> Edit this dining

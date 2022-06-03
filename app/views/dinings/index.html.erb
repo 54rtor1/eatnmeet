@@ -5,15 +5,24 @@
     <%= render 'searchbar' %>
   </div>
 
+
   <div class="container">
     <div class="row">
     <%= render 'card', dining: @dining %>
-  </div>
- <hr>
+  <br>
+  <hr>
   <div class="host-banner jumbotron jumbotron-fluid p-5 my-5">
     <div class="container">
-      <h2>Host your own experience</h2>
-      <p class="lead">Create an experience and get to know people from all over the world in your own place! <%= link_to "Create dining", new_dining_path, class: "button-dark mx-5 px-5" %></p>
+      <div class="row">
+        <div class="col">
+          <h2>Host your own experience</h2>
+          <p>Create an experience and get to know people from all over the world in your own place!</p>
+        </div>
+        <div class="col">
+        <%= link_to "Create dining", new_dining_path, class: "button-dark order-2" %>
+        </div>
+      </div>
+    </div>
     </div>
   </div>
  <hr>
