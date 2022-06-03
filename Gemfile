@@ -25,6 +25,7 @@ gem 'jbuilder', '~> 2.7'
 # Geocoding gem
 gem "geocoder"
 
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
