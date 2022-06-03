@@ -1,10 +1,12 @@
-<div class="container align-items-center light-orange">
+<div class="container align-items-center">
   <h1>Hello <%= @user.name %>!</h1>
 
   <div class = "user_future_bookings">
     <h2>The Dinings You Created</h2>
       <% current_user.dinings.each do |dining|%>
-      <li> <%= dining.name%> </li>
+      <div class="col-sm-12">
+   <%= render 'dinings/card', dining: @dining %>
+      </div>
       <% end %>
   </div>
     <div class = "user_past_bookings">
@@ -15,8 +17,9 @@
   </div>
     <div class = "user_dinings">
     <h2>Your Past Dinings</h2>
-      <ul>
-      </ul>
+     <% @past_bookings.each do |future| %>
+    <li><%= past.dining.name %> </li>
+    <% end %>
   </div>
 
 </div>
