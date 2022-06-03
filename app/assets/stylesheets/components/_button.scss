@@ -18,9 +18,13 @@
 
 .button-dark {
 background-color: $dark;
-color: $lighter-orange;
-& :hover {
-opacity: 0.6;
-color: $darker-orange;
+color: white;
+padding: 10px;
+border-radius: 4px;
+opacity: 0.8;
 }
+
+.button-dark:hover {
+opacity: 0.6;
+transition: 0.3s ease;
 }
