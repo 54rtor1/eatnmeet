@@ -11,8 +11,7 @@
 
 <div class="container p-5">
 
-  <%= form_tag dinings_path, method: 'get', :class => 'form-inline' do  %>
-      <div class="input-group">
+  <%= form_tag dinings_path, method: 'get', :class => 'input-group' do  %>
         <input type="search" class="form-control rounded" placeholder="Where would you like to dine?" <%= text_field_tag :query,params[:query] %>
         <%= submit_tag "Search", class: 'btn btn-outline-primary' %>
     </div>
