@@ -1,11 +1,14 @@
-<div class="container light-orange">
-
-<h1>Edit dining</h1>
+<div class="container align-items-center">
+<div class="title text-center pt-5">
+<h1>Edit <%= @dining.name %></h1>
+</div>
 
 <%= render 'form', dining: @dining %>
 
-<hr>
-<%= link_to dinings_path do %>
-  <i class="fa fa-history"></i> Back to list
-<% end %>
+  <div class="text-center mb-5">
+  <%= link_to dinings_path, class: 'device p-3' do %>
+    Back to list
+  <% end %>
+</div>
+
 </div>
