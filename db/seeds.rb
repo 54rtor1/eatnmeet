@@ -1,12 +1,49 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
 
-julia = User.create!(name: 'Julia', description: 'Figma genius who loves good food', email: 'okayy@hotmail.com', password: 'Ola1234', country: 'Brazil', role: 'guest', birthdate: '06/02/1992', address: 'dumb street')
-carla = User.create!(name: 'Carla', description: 'Rails genius who loves italian food', email: 'comeonnnn@hotmail.com', password: 'Olaa1234', country: 'Brazil', role: 'host', birthdate: '08/02/1992', address: 'smart street')
-casa_di_dona_anna = Dining.create!(date: '09/07/2022', time: Time.now, category: 'Italian', user: carla)
-julia_italy = Booking.create!(user: julia, dining: casa_di_dona_anna, comment: 'Would like to learn how to make pasta')
+puts 'Creating 10 fake users'
+100.times do
+  user = User.new(
+    email: Faker::Internet.email,
+    password: Faker::Code.npi,
+    name: Faker::Name.name,
+    avatar: Faker::Avatar.image(slug: "my-own-slug", size: "10x10", format: "jpg"),
+    description: Faker::Quote.most_interesting_man_in_the_world,
+    phone_number: Faker::PhoneNumber,
+    country: Faker::Address.country,
+    birthdate: Faker::Date.birthday(min_age: 18, max_age: 65),
+    role: ["Guest", "Host"].sample,
+    city: Faker::Address.city,
+    address: Faker::Address.full_address
+  )
+  user.save!
+end
+puts "finished"
+
+puts 'Creating 10 fake dinings'
+10.times do
+  dining = Dining.new(
+    date: Faker::Date.between(from: '20120-09-23', to: '2022-12-30'),
+    category: Faker::Restaurant.type,
+    name: Faker::Restaurant.name,
+    comment: Faker::Restaurant.description,
+    max_guests: Faker::Number.between(from: 1, to: 10),
+    address: Faker::Address.full_address,
+    latitude: Faker::Address.latitude,
+    longitude: Faker::Address.longitude,
+    price: Faker::Number.decimal(l_digits: 2),
+    user_id: Faker::Number.between(from: 1, to: 10)
+  )
+  dining.save!
+end
+puts "finished"
+
+puts 'Creating 10 fake booking'
+10.times do
+  booking = Booking.new(
+    user_id: Faker::Number.between(from: 1, to: 100),
+    dining_id: Faker::Number.between(from: 1, to: 10),
+    comment: Faker::Superhero.descriptor
+  )
+  booking.save!
+end
+puts "finished"
