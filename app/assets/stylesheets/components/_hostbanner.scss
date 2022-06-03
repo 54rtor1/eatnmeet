@@ -17,3 +17,22 @@ border-radius: 5px;
   opacity: 1;
 }
 }
+
+.white-banner {
+  padding-left: 0;
+  background: white;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+& h2 {
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+& p strong {
+  opacity: 0.8;
+  color: $darker-orange;
+}
+
+
+& img {
+  height: 100%;
+}
+}
