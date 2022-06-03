@@ -18,36 +18,13 @@ border-radius: 5px;
 }
 }
 
-.host-banner2 {
-  padding: 30px;
-  background: linear-gradient(90deg, rgba(223,96,160,1) 0%, rgba(215,122,97,1) 70%);
-  box-shadow: 0 0 5px rgba(0,0,0,0.2);
-
-border-radius: 15px;
-& h2 {
-  color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-}
-
-& p {
-  opacity: 0.8;
-}
-
-& .button-dark {
-  opacity: 1;
-}
-}
-
-
 .white-banner {
-  padding: 30px;
   background: white;
-  border-radius: 15px;
 & h2 {
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
-& p {
+& p strong {
   opacity: 0.8;
 }
 
@@ -55,6 +32,6 @@ border-radius: 15px;
   opacity: 1;
 }
 img {
-  border-radius: 15px;
+  height: 100%;
 }
 }
