@@ -1,25 +1,22 @@
 <div class="mb-4 d-flex align-items-left justify-content-center">
+
   <div class="containe text-center p-5">
-    <h2 class="py-3">Explore dining experiences</h2>
-
-
+    <h1 class="py-3">Explore dining experiences</h1>
     <%= render 'searchbar' %>
-
-</div>
-<div class="container">
-
-  <div class="row">
-  <%= render 'card', dining: @dining %>
-</div>
-  <hr>
-  <div class="wrapper justify-content-center">
-
-    <div class="d-flex align-items-center justify-content-between mb-3">
-      <%= link_to "Create dining", new_dining_path, class: "btn button-dark" %>
-    </div>
   </div>
 
-<hr>
+  <div class="container">
+    <div class="row">
+    <%= render 'card', dining: @dining %>
+  </div>
+ <hr>
+  <div class="host-banner jumbotron jumbotron-fluid p-5 my-5">
+    <div class="container">
+      <h2>Host your own experience</h2>
+      <p class="lead">Create an experience and get to know people from all over the world in your own place! <%= link_to "Create dining", new_dining_path, class: "button-dark mx-5 px-5" %></p>
+    </div>
+  </div>
+ <hr>
   <div class="py-3">
     <div style="width: 100%; height: 500px;"
       data-controller="mapbox"

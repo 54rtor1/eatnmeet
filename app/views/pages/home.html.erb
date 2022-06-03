@@ -1,18 +1,20 @@
-<div class="cover mb-4 d-flex align-items-center justify-content-center">
-  <div class="text-center text-white">
-    <h1>Have an amazing dining experience... wherever you are</h1>
-  <div class="container">
-    <%= form_tag dinings_path, method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Find a dining"
-      %>
-      <%= submit_tag "Search", class: "btn btn-primary" %>
-    <% end %>
-    <h3 class="typed-js" data-controller="typed-js"></h3>
+<div class="cover">
+  <div>
+    <h1>Have an amazing dining experience...</h1>
+    <h2><span data-controller="typed-js"></span></h2>
   </div>
+  <br>
+  <div>
+  <a class="button-dark"<%= link_to "Find an experience", dinings_path %></a>
+  </div >
 </div>
-<p><%= link_to "View all dining experiences", dinings_path %></p>
+
+<div class="container p-5">
+
+  <%= form_tag dinings_path, method: 'get', :class => 'input-group' do  %>
+        <input type="search" class="form-control rounded" placeholder="Where would you like to dine?" <%= text_field_tag :query,params[:query] %>
+        <%= submit_tag "Search", class: 'btn btn-outline-primary' %>
+    </div>
+  <%end%>
 
 </div>

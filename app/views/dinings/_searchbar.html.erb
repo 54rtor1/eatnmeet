@@ -1,5 +1,5 @@
-   <div class="input-group">
-      <input type="search" class="form-control rounded" placeholder="Where would you like to dine?" aria-label="Search" aria-describedby="search-addon" />
-      <button type="button" class="btn btn-outline-primary">search</button>
+<%= form_tag dinings_path, method: 'get', :class => 'input-group' do  %>
+        <input type="search" class="form-control rounded" placeholder="Where would you like to dine?" <%= text_field_tag :query,params[:query] %>
+        <%= submit_tag "Search", class: 'btn btn-outline-primary' %>
     </div>
-  </div>
+  <%end%>
