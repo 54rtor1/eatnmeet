@@ -5,14 +5,14 @@
   <div class="container white-banner">
           <div class="row">
           <div class="col">
-            <div class="dining-image">
+            <div class="dining-image p-0">
               <% unless @dining.photo.key.nil? %>
                 <div class="card-image"><%= cl_image_tag @dining.photo.key, height: 300, width: 400, crop: :fill %></div>
             <% end %>
             </div>
           </div>
             <div class="col">
-              <div class ="dining-info">
+              <div class ="dining-info p-5 text-end">
                 <p><strong>Description:</strong><%= @dining.comment %></p>
                 <p><strong>Date:</strong> <%= @dining.date %></p>
                 <p><strong>Hour:</strong> <%= @dining.time %></p>
