@@ -1,26 +1,23 @@
 <div class="container p-5 justify-content-center">
-          <div class="title">
+          <div class="title text-center p-3 mb-3">
             <h1><%= @dining.name %></h1>
           </div>
   <div class="container white-banner">
           <div class="row">
           <div class="col">
-            <div class="dining-image p-0">
+            <div class="dining-image">
               <% unless @dining.photo.key.nil? %>
                 <div class="card-image"><%= cl_image_tag @dining.photo.key, height: 300, width: 400, crop: :fill %></div>
             <% end %>
             </div>
           </div>
             <div class="col">
-              <div class ="dining-info p-5 text-end">
-                <p><strong>Description:</strong><%= @dining.comment %></p>
-                <p><strong>Date:</strong> <%= @dining.date %></p>
-                <p><strong>Hour:</strong> <%= @dining.time %></p>
-                <p><strong>Address:</strong> <%= @dining.address %></p>
-                <p><strong>Category:</strong> <%= @dining.category %></p>
-                <p><strong>Max guests:</strong> <%= @dining.max_guests %></p>
-                <p><strong>Confirmed bookings:</strong> <%= @dining.bookings.count %></p>
-                <p><strong>Price per guest:</strong> <%= @dining.price %></p>
+              <div class ="dining-info p-5 text-justify">
+                <p>Dinner for <%= @dining.max_guests %> guests, <%= @dining.bookings.count %> already booked. It will coast $<%= @dining.price %> for each.</p>
+                <p><strong>Description:</strong> <%= @dining.comment %></p>
+                <p><strong>When?</strong> <%= @dining.date %>, <%= @dining.time %></p>
+                <p><strong>Where?</strong> <%= @dining.address %></p>
+                <p><strong>What cuisine am I having?</strong> <%= @dining.category %></p>
               </div>
             </div>
         </div>
