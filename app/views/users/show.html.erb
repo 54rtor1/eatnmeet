@@ -1,25 +1,27 @@
 <div class="container align-items-center">
   <h1>Hello <%= @user.name %>!</h1>
 
-  <div class = "user_future_bookings">
-    <h2>The Dinings You Created</h2>
-      <% current_user.dinings.each do |dining|%>
-      <div class="col-sm-12">
-   <%= render 'dinings/card', dining: @dining %>
-      </div>
+    <div class = "user_future_bookings">
+      <h2>The Dinings You Created</h2>
+      <div class ="row">
+        <% current_user.dinings.each do |dining|%>
+    <%= render 'dinings/card', dining: @dining %>
+        <% end %>
+        </div>
+    </div>
+    </div>
+      <div class = "user_past_bookings">
+      <h2>Your Upcoming booked Dinnings</h2>
+      <% @future_bookings.each do |future| %>
+      <li><%= future.dining.name %> </li>
       <% end %>
-  </div>
-    <div class = "user_past_bookings">
-    <h2>Your Upcoming booked Dinnings</h2>
-    <% @future_bookings.each do |future| %>
-    <li><%= future.dining.name %> </li>
-    <% end %>
-  </div>
-    <div class = "user_dinings">
-    <h2>Your Past Dinings</h2>
-     <% @past_bookings.each do |future| %>
-    <li><%= past.dining.name %> </li>
-    <% end %>
+    </div>
+      <div class = "user_dinings">
+      <h2>Your Past Dinings</h2>
+      <% @past_bookings.each do |future| %>
+      <li><%= past.dining.name %> </li>
+      <% end %>
+    </div>
   </div>
 
 </div>
