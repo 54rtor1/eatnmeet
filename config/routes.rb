@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resources :bookings, only: :destroy
 
+  resources :users, only: :show
 
   # resources :bookings do
   #   member do
