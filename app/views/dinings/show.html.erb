@@ -1,40 +1,48 @@
-<div class="mb-4 justify-content-center">
-  <div class="title">
-    <h1><%= @dining.name %></h1>
-  </div>
-  <hr>
-  <div class="dining-image">
-    <% unless @dining.photo.key.nil? %>
-      <div class="card-image"><%= cl_image_tag @dining.photo.key, height: 300, width: 400, crop: :fill %></div>
-  <% end %>
-  </div>
-  <div class ="dining-info">
-    <p class="well">Date: <%= @dining.date %></p>
-    <p class="well">Hour: <%= @dining.time %></p>
-    <p class="well">Address: <%= @dining.address %></p>
-    <p class="well">Category: <%= @dining.category %></p>
-    <p class="well">Max guests: <%= @dining.max_guests %></p>
-    <p class="well">Confirmed bookings: <%= @dining.bookings.count %></p>
-    <p class="well">Price per guest: <%= @dining.price %></p>
-    <p class="well">Description: <%= @dining.comment %></p>
-  </div>
-  <hr>
-  <%= link_to edit_dining_path(@dining.id), class: 'pull-right btn btn-primary btn-radius' do %>
-    <i class="fa fa-pencil"></i> Edit this dining
-  <% end %>
-  <br><br>
+<div class="container mb-4 justify-content-center">
+<div class="row">
+    <div class="col-md-6">
+<div class="container host-banner2">
+        <div class="title">
+          <h1><%= @dining.name %></h1>
+        </div>
+        <div class="container white-banner">
+        <div class="dining-image">
+          <% unless @dining.photo.key.nil? %>
+            <div class="card-image"><%= cl_image_tag @dining.photo.key, height: 300, width: 400, crop: :fill %></div>
+        <% end %>
+        </div>
+        <div class ="dining-info p-5">
+          <p><strong>Description:</strong> <%= @dining.comment %></p>
+          <p><strong>Date:</strong> <%= @dining.date %></p>
+          <p><strong>Hour:</strong> <%= @dining.time %></p>
+          <p><strong>Address:</strong> <%= @dining.address %></p>
+          <p><strong>Category:</strong> <%= @dining.category %></p>
+          <p><strong>Max guests:</strong> <%= @dining.max_guests %></p>
+          <p><strong>Confirmed bookings:</strong> <%= @dining.bookings.count %></p>
+          <p><strong>Price per guest:</strong> <%= @dining.price %></p>
+        </div>
+      </div>
+    </div>
 
-  <div data-controller="bookings-create">
-    <% if @booking.present? %>
-        <%= link_to "Cancel", booking_path(@booking), method: 'delete', class: 'btn btn-danger', data: { action:"click->bookings-create#changeButton", bookings_create_target:"button" }%>
-    <% elsif  @dining.bookings.count < @dining.max_guests %>
-      <%= link_to "Reserve your spot!", dining_bookings_path(@dining), method: 'post', class: 'btn btn-success', data: { action:"click->bookings-create#changeButton", bookings_create_target:"button" }%>
-    <% else %>
-      <p> Sorry, this dining is fully booked </p>
-    <% end %>
+      <hr>
+      <%= link_to edit_dining_path(@dining.id), class: 'pull-right btn btn-primary btn-radius' do %>
+        <i class="fa fa-pencil"></i> Edit this dining
+      <% end %>
+      <br><br>
+
+      <div data-controller="bookings-create">
+        <% if @booking.present? %>
+            <%= link_to "Cancel", booking_path(@booking), method: 'delete', class: 'btn btn-danger', data: { action:"click->bookings-create#changeButton", bookings_create_target:"button" }%>
+        <% elsif  @dining.bookings.count < @dining.max_guests %>
+          <%= link_to "Reserve your spot!", dining_bookings_path(@dining), method: 'post', class: 'btn btn-success', data: { action:"click->bookings-create#changeButton", bookings_create_target:"button" }%>
+        <% else %>
+          <p> Sorry, this dining is fully booked </p>
+        <% end %>
+      </div>
+      <br><br>
+      <%= link_to dinings_path do %>
+        <i class="fa fa-history"></i> Back to list
+      <% end %>
+    </div>
   </div>
-  <br><br>
-  <%= link_to dinings_path do %>
-    <i class="fa fa-history"></i> Back to list
-  <% end %>
 </div>
