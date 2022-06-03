@@ -1,11 +1,12 @@
-<div class="container align-items-center light-orange">
+<div class="container align-items-center">
   <h1>New Dining Experience</h1>
 
   <%= render 'form', dining: @dining %>
 
   <hr>
-  <%= link_to dinings_path do %>
-    <i class="fa fa-history"></i> Back to list
+
+   <%= link_to dinings_path, class: 'device p-3 m-3' do %>
+          Back to list
   <% end %>
 
 </div>
